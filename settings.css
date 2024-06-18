@@ -1,0 +1,55 @@
+.settings {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation: .2s ease-in 1 normal both running blurin;
+}
+.settings > * {
+    animation: .2s ease-in 1 normal both running opin;
+}
+
+.settings .material-symbols-outlined {
+    cursor: pointer;
+}
+
+.settings_box {
+    margin: auto;
+    background-color: black;
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 12px;
+    width: 40%;
+    margin-top: 4%;
+    padding: 2vw;
+}
+
+.cb {
+    float: right;
+    user-select: none;
+}
+
+.settings-help-text {
+    font-style: italic;
+    color: rgb(99, 99, 99);
+}
+
+
+@keyframes blurin{
+    from{
+        backdrop-filter: blur(0px);
+    }
+    to{
+        backdrop-filter: blur(8px);
+    }
+}
+
+@keyframes opin{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
