@@ -69,3 +69,19 @@ body {
         display: inline-block;
     }
 }
+
+.credits {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    color: rgb(112, 112, 112);
+    font-style: italic;
+    font-size: smaller;
+    text-align: center;
+    margin: auto;
+}
+
+.credits p {
+    margin: 5px;
+}

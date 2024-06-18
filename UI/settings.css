@@ -6,6 +6,7 @@
     width: 100%;
     height: 100%;
     animation: .2s ease-in 1 normal both running blurin;
+    z-index: 99;
 }
 .settings > * {
     animation: .2s ease-in 1 normal both running opin;
