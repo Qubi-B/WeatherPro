@@ -1,20 +1,13 @@
-# A PWA weather app (work-in-progress)
+# The new PWA weather app
 ## Introduction
-<table>
-<tr>
-  <td>
-    This project's goal is to create a functioning no-ads, no-tracking PWA for weather. Personally, as an iPhone user I was surprised there was no good android weather app (from my small experience with someone else's phone).
-    That's why I have decided to make a cool weather app, working on both desktop and mobile. 
-    The app is set to be a PWA (Progressive Web App), which will make it possible to be added directly to your homescreen, and function as a native app. 
-  </td>
-  <td>
-    <img src="https://github.com/Qubi-B/weather-app-one/blob/NewUI/png/screenshot.jpg?raw=true">
-  </td>
-</tr>
-</table>
+This project's goal is to create a functioning no-ads, no-tracking PWA for weather. This is a new version of [weather-app-one](https://github.com/Qubi-B/weather-app-one), but it has a completely new UI which I made to be responsive, mobile-first.
+That's why I have decided to make a cool weather app, working on both desktop and mobile. 
+The app is set to be a PWA (Progressive Web App), which will make it possible to be added directly to your homescreen, and function as a native app. 
+
+![image](https://github.com/Qubi-B/WeatherPro/assets/61910780/d8a04930-64c2-42ac-b1f9-4091c81b361a)
 
 > [!NOTE]
-> This is _**still a work in progress**_. The software is not usable yet.
+> This is _**still a work in progress**_.
 
 ## What will I learn?
 Better my web development skills, making responsive apps, using APIs, creating PWAs.
@@ -27,7 +20,7 @@ You can always download the files and run the website locally, using Apache-base
 > _The website **must** be run using a webserver, and not by opening index.html in the browser. Due to security reasons it won't work standalone._
 
 ### How to input API key?
-Get your API key from [Openweather](https://openweathermap.org/).
+Get your API key from [Openweather](https://openweathermap.org/). 
 After cloning the repo, create a file named "openWeatherApiKey.json" in the "/js" directory.
 Its contents should look like this:
 ```json
