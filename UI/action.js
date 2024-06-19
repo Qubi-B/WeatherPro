@@ -33,9 +33,12 @@ function closeSettings(){
 }
 
 function openSearch(){
-    //if(!localStorage.getItem("lastSearch")){
-    //   document.getElementById('firsttimelabel').style.display = "block";
-    // }
+    if(!localStorage.getItem("lastSearch")){
+       document.getElementById('firsttimelabel').style.display = "block";
+    }
+    else{
+        document.getElementById('firsttimelabel').style.display = "none";
+    }
     document.getElementById("search-visibility").style.display = "block";
     //document.getElementById("settings-visibility").style.animation = ".5s ease-in 1 normal both running blurin;";
 }
