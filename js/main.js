@@ -13,12 +13,36 @@ getApiKey().then(apiKey => {
 
 //Now check the weather once initially, after selecting city..
 //button.addEventListener('click', function(){
-checkwthr();
-//});
 
-setTimeout(() => {
-    getForecast()
-}, 500);
+if(!localStorage.getItem("lastSearch")){
+  openSearch();
+}
+else{
+  inputValue = localStorage.getItem("lastSearch");
+  checkwthr();
+  setTimeout(() => {
+    getForecastPrintSmallTable();
+  }, 500);  
+}
+
+
+
+
+
+function searchCity(){
+  var field = document.getElementById('searchField').value;
+  inputValue = field;
+  checkwthr();
+  setTimeout(() => {
+    getForecastPrintSmallTable();
+  }, 500);
+  localStorage.setItem("lastSearch", field);
+  closeSearch();
+}
+
+
+
+
 
 //Then check it every 30 cumulative seconds the user is looking at the page
 //TO-DO

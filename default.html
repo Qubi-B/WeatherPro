@@ -6,45 +6,108 @@
     <title>Weather Pro</title>
     <link rel="stylesheet" href="UI/style.css" />
     <link rel="stylesheet" href="UI/settings.css" />
+    <link rel="stylesheet" href="UI/search.css" />
     <link rel="stylesheet" href="UI/material-symbols.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     <div class="main-body">
         <div class="navi">
-            <p><span class="material-symbols-outlined">home</span></p>
+            <p onclick="openSearch();"><span class="material-symbols-outlined">search</span></p>
             <p onclick="refresh();"><span class="material-symbols-outlined">refresh</span></p>
             <p onclick="switchModes();"><span id="dmb" class="material-symbols-outlined">light_mode</span></p>
             <p onclick="openSettings();"><span class="material-symbols-outlined">settings</span></p>
         </div>
         <div class="tempp">
             <h2><span class="cityname"><img src="newIcons/load.png" alt="" class="loading_icon" />&nbsp;&nbsp;City</span></h2>
-            <p><img src="newIcons/01n.png" alt="" id="curr_icon"/>&nbsp&nbsp&nbsp<span class="temp">-- °C</span></p>
-            <p><span class="desc">Loading data</span>.</p>
+            <p><img src="" alt="" id="curr_icon"/>&nbsp&nbsp&nbsp<span class="temp">-- °C</span></p>
+            <p><span class="desc">--</span></p>
+            <div class="spec-data">
+                <div class="data-cont">
+                    <img src="newIcons/raindrop-icon.png" alt="" class="data-cont-icon">
+                    <p>
+                        <span class="data-cont-smalltext">Humidity</span> <br>
+                        <span class="data-cont-maintext"><span class="humi">-- %</span></span>
+                    </p>
+                </div>
+                <div class="data-cont">
+                    <img src="newIcons/pressure-icon.png" alt="" class="data-cont-icon">
+                    <p>
+                        <span class="data-cont-smalltext">Pressure</span> <br>
+                        <span class="data-cont-maintext"><span class="pres">---- hPa</span></span>
+                    </p>
+                </div>
+                <div class="data-cont">
+                    <img src="newIcons/aqi-icon.png" alt="" class="data-cont-icon">
+                    <p>
+                        <span class="data-cont-smalltext">Air quality</span> <br>
+                        <span class="data-cont-maintext"><span class="aqi">Unknown</span></span>
+                    </p>
+                </div>
+                <div class="data-cont">
+                    <img src="newIcons/wind-icon.png" alt="" class="data-cont-icon">
+                    <p>
+                        <span class="data-cont-smalltext">Wind</span> <br>
+                        <span class="data-cont-maintext"><span class="wspd">-- m/s N</span></span>
+                    </p>
+                </div>
+                <div class="data-cont">
+                    <img src="newIcons/gust-icon.png" alt="" class="data-cont-icon">
+                    <p>
+                        <span class="data-cont-smalltext">Wind gust</span> <br>
+                        <span class="data-cont-maintext"><span class="wgst">-- m/s</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="credits">
+                <p>Data provider: <a href="https://openweathermap.org" target="_blank">OpenWeather</a></p>
+                <p>&copy; 2024-<span class="year"></span> by <a href="https://github.com/Qubi-B/" target="_blank">Qubi-B</a>.</p>
+                <br>
+            </div>
         </div>
         <div class="fore">
-            <h2>Forecast</h2>
+            <h2>Forecast (3h/5d)</h2>
+            <div class="forecast">
+                <span class="forecast-generate">
+                    <img src="newIcons/load.png" alt="" class="loading_icon" />
+                </span>
+              </div>
         </div>
+        <!--
         <div class="data">
             <h2>Advanced data</h2>
+            <p>Humidity: <span class="humi"></span></p>
+            <p>Pressure: </p>
+            <p>Wind speed: </p>
+            <p>Wind angle: <span class="wang"></span></p>
+            <p>AQI: </p>
+            <p>PM<sub>10</sub>: <span class="pm10"></span></p>
+            <p>PM<sub>2.5</sub>: <span class="pm25"></span></p>
+            <p>Latitude: <span class="lat"></span></p>
+            <p>Longitude: <span class="lon"></span></p>
         </div>
+        -->
     </div>
-    <div class="credits"></div>
 
     <div class="settings" id="settings-visibility">
         <div class="settings_box" id="settings-box">
             <span onclick="closeSettings();" class="cb"><span class="material-symbols-outlined">close</span></span>
-            <h2>Settings</h2>
-            <p>API Key:</p>
-            <p class="settings-help-text">Insert your own OpenWeather API Key to see the forecast.</p>
+            <h1>Settings</h1>
+            <p class="warninglabel">Settings are not available yet. There is no parameters to set.</del></p>
+            <p><del>API Key:</p>
+            <p class="settings-help-text"><del>Insert your own OpenWeather API Key to see the forecast.</del></p>
+        </div>
+    </div>
+    <div class="search" id="search-visibility">
+        <div class="search_box" id="search-box">
+            <span onclick="closeSearch();" class="cb"><span class="material-symbols-outlined">close</span></span>
+            <h1>Search</h1>
+            <p class="firsttimelabel">Seems like you haven't used this website yet. Search for a city to get started.</p>
+            <p class="settings-help-text">Enter your city name and click the search icon.</p>
+            <input type="text" id="searchField"><span onclick="searchCity();" class="material-symbols-outlined">search</span>
         </div>
     </div>
 
-    <div class="credits">
-        <p>&copy; 2024-<span class="year"></span> by <a href="https://github.com/Qubi-B/">Qubi-B</a>. All rights reserved.</p>
-        <p>UI: newWeatherUI v0.0.1</p>
-        <p>Back: weather-app-one v0.0.1</p>
-    </div>
     <script src="UI/action.js"></script>
     <script src="js/script.js"></script>
     <script src="js/main.js"></script>

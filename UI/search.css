@@ -1,22 +1,22 @@
-.settings {
+.search {
     display: none;
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    animation: .2s ease-in 1 normal both running blurin;
+    animation: .2s ease-in 1 normal both running sblurin;
     z-index: 99;
 }
-.settings > * {
-    animation: .2s ease-in 1 normal both running opin;
+.search > * {
+    animation: .2s ease-in 1 normal both running sopin;
 }
 
-.settings .material-symbols-outlined {
+.search .material-symbols-outlined {
     cursor: pointer;
 }
 
-.settings_box {
+.search_box {
     margin: auto;
     background-color: black;
     border: 1px solid rgb(99, 99, 99);
@@ -26,18 +26,7 @@
     padding: 2vw;
 }
 
-.cb {
-    float: right;
-    user-select: none;
-}
-
-.settings-help-text {
-    font-style: italic;
-    color: rgb(99, 99, 99);
-}
-
-
-@keyframes blurin{
+@keyframes sblurin{
     from{
         -webkit-backdrop-filter: blur(0px);
         backdrop-filter: blur(0px);
@@ -48,7 +37,7 @@
     }
 }
 
-@keyframes opin{
+@keyframes sopin{
     from{
         opacity: 0;
     }
@@ -58,7 +47,21 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .settings_box {
+    .search_box {
         width: 85%;
     }
+}
+
+.search input {
+    background-color: transparent;
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 12px;
+    padding: 1vh;
+    color: inherit;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.search span {
+    vertical-align: middle;
+    margin-left: 2vh;
 }
