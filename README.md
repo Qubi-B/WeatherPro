@@ -4,7 +4,7 @@ This project's goal is to create a functioning no-ads, no-tracking PWA for weath
 That's why I have decided to make a cool weather app, working on both desktop and mobile. 
 The app is set to be a PWA (Progressive Web App), which will make it possible to be added directly to your homescreen, and function as a native app. 
 
-![image](https://github.com/Qubi-B/WeatherPro/assets/61910780/d8a04930-64c2-42ac-b1f9-4091c81b361a)
+![image](https://github.com/Qubi-B/WeatherPro/assets/61910780/10587a9c-0952-43b2-a19f-753d006358ea)
 
 > [!NOTE]
 > This is _**still a work in progress**_.
