@@ -1,6 +1,10 @@
 var darkModeEngaged = "true";
 var buttonIcon = document.getElementById("dmb");
 
+function refresh(){
+    location.reload();
+}
+
 function switchModes(){
     if(darkModeEngaged == "true"){
         document.body.style.backgroundColor = "white";

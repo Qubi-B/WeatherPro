@@ -11,7 +11,7 @@ body {
 
 .main-body {
     margin: auto;
-    width: 60%;
+    width: 75%;
     height: 8vh;
     padding: 2vw;
 }
@@ -64,9 +64,15 @@ body {
         width: 100%;
         margin-right: 0%;
         margin-bottom: 3%;
-    }    
+        border-radius: 20px;
+    }
     .navi p {
         display: inline-block;
+        margin-left: 8vw;
+        margin-right: 8vw;
+    }
+    .navi {
+        border: 0;
     }
 }
 
