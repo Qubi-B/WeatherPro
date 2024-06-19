@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro weather</title>
+    <title>Weather Pro</title>
     <link rel="stylesheet" href="UI/style.css" />
     <link rel="stylesheet" href="UI/settings.css" />
     <link rel="stylesheet" href="UI/material-symbols.css" />
@@ -17,10 +17,10 @@
             <p onclick="switchModes();"><span id="dmb" class="material-symbols-outlined">light_mode</span></p>
             <p onclick="openSettings();"><span class="material-symbols-outlined">settings</span></p>
         </div>
-        <div class="temp">
-            <h2>Current</h2>
-            <p><img src="" alt="" class="curr_icon">&nbsp&nbsp&nbsp<span class="temp"></span></p>
-            <p><span class="desc"></span></p>
+        <div class="tempp">
+            <h2><span class="cityname"><img src="newIcons/load.png" alt="" class="loading_icon" />&nbsp;&nbsp;City</span></h2>
+            <p><img src="newIcons/01n.png" alt="" id="curr_icon"/>&nbsp&nbsp&nbsp<span class="temp">-- °C</span></p>
+            <p><span class="desc">Loading data</span>.</p>
         </div>
         <div class="fore">
             <h2>Forecast</h2>
@@ -46,7 +46,7 @@
         <p>Back: weather-app-one v0.0.1</p>
     </div>
     <script src="UI/action.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

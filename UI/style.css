@@ -38,7 +38,7 @@ body {
 }
 
 
-.temp {
+.tempp {
     width: 27%;
 }
 
@@ -60,7 +60,7 @@ body {
     .main-body {
         width: 95%;
     }
-    .navi, .temp, .fore, .data {
+    .navi, .tempp, .fore, .data {
         width: 100%;
         margin-right: 0%;
         margin-bottom: 3%;
@@ -90,4 +90,30 @@ body {
 
 .credits p {
     margin: 5px;
+}
+
+.loading_icon {
+    animation: .5s linear infinite both running load;
+    height: 25px;
+    vertical-align: middle;
+}
+
+@keyframes load {
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform: rotate(360deg); 
+    } 
+}
+
+.temp {
+    font-size: 5vh;
+}
+#curr_icon {
+    height: 8vh;
+    vertical-align: middle;
+}
+
+.desc {
+    text-transform: capitalize;
+    font-size: 3vh;
 }
