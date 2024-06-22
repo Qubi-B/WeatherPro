@@ -2,12 +2,13 @@
 ## Introduction
 This project's goal is to create a functioning no-ads, no-tracking PWA for weather. This is a new version of [weather-app-one](https://github.com/Qubi-B/weather-app-one), but it has a completely new UI which I made to be responsive, mobile-first.
 That's why I have decided to make a cool weather app, working on both desktop and mobile. 
-The app is set to be a PWA (Progressive Web App), which will make it possible to be added directly to your homescreen, and function as a native app. 
+The app is set to be a PWA (Progressive Web App), which will make it possible to be added directly to your homescreen, and function as a native app.
 
-![image](https://github.com/Qubi-B/WeatherPro/assets/61910780/10587a9c-0952-43b2-a19f-753d006358ea)
+Screenshot demo:
+![image](https://github.com/Qubi-B/WeatherPro/assets/61910780/d2abbb90-2fc2-49c6-8e8c-ba00bdd873c5)
 
-> [!NOTE]
-> This is _**still a work in progress**_.
+> [!TIP]
+> Finally, the current version is usable, however there is space for improvements. This version will be published as a release soon
 
 ## What will I learn?
 Better my web development skills, making responsive apps, using APIs, creating PWAs.
