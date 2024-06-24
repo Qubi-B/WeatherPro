@@ -133,8 +133,8 @@ function getForecastPrintSmallTable(){
           forecTableStagedContent += "<tr>";
           forecTableStagedContent += "<td style='text-align: center'><p>" + (data['list'][i]['dt_txt']).slice(8, 16) + "</p></td>";
           forecTableStagedContent += "<td style='text-align: right'><img src='newIcons/" + data['list'][i]['weather'][0]['icon'] + ".png' alt=''></td>";
-          forecTableStagedContent += "<td><p>" + Math.round(parseFloat(data['list'][i]['main']['temp_min']))  + "°C" + "</p></td>";
-          forecTableStagedContent += "<td><p>" + Math.round(parseFloat(data['list'][i]['main']['temp_max']))  + "°C" + "</p></td>";
+          forecTableStagedContent += "<td><p>" + Math.round(parseFloat(data['list'][i]['main']['temp_min']))  + " - " + "";
+          forecTableStagedContent += "" + Math.round(parseFloat(data['list'][i]['main']['temp_max']))  + "°C" + "</p></td>";
           forecTableStagedContent += "</tr>";
         }
         forecTableStagedContent += "<tr>";
@@ -162,8 +162,8 @@ function getForecastPrintFullTable(){
           forecTableStagedContent += "<tr>";
           forecTableStagedContent += "<td style='text-align: center'><p>" + (data['list'][i]['dt_txt']).slice(8, 16) + "</p></td>";
           forecTableStagedContent += "<td style='text-align: right'><img src='newIcons/" + data['list'][i]['weather'][0]['icon'] + ".png' alt=''></td>";
-          forecTableStagedContent += "<td><p>" + Math.round(parseFloat(data['list'][i]['main']['temp_min']))  + "°C" + "</p></td>";
-          forecTableStagedContent += "<td><p>" + Math.round(parseFloat(data['list'][i]['main']['temp_max']))  + "°C" + "</p></td>";
+          forecTableStagedContent += "<td><p>" + Math.round(parseFloat(data['list'][i]['main']['temp_min']))  + " - " + "";
+          forecTableStagedContent += "" + Math.round(parseFloat(data['list'][i]['main']['temp_max']))  + "°C" + "</p></td>";
           forecTableStagedContent += "</tr>";
         }
         forecTableStagedContent += "<tr>";

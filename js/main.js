@@ -1,7 +1,7 @@
 //First get the API key from file
 //this is code from the internet and I have no idea what is going on until...
 function getApiKey() {
-  return fetch("http://192.168.1.105/weather-pro/js/openWeatherApiKey.json")
+  return fetch("http://localhost/weather-pro/js/openWeatherApiKey.json")
    .then(response => response.json())
    .then(data => data.key);
 }

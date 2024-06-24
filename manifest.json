@@ -1,16 +1,16 @@
 {
     "name": "Weather Pro",
-    "short_name": "WthrPro",
-    "theme_color": "#696969",
+    "short_name": "Weather Pro",
+    "theme_color": "#000000",
     "background_color": "#000000",
     "display": "fullscreen",
     "orientation": "portrait",
     "description": "A goated weather app",
-    "scope": "/",
-    "start_url": "/",
+    "scope": "/weather-pro",
+    "start_url": "/weather-pro",
     "icons": [
         {
-            "src": "192.168.1.105/weather-pro/newIcons/logoicon.png",
+            "src": "/weather-pro/newIcons/logoicon.png",
             "sizes": "512x512"
         }
     ]
