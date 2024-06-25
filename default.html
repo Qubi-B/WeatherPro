@@ -97,18 +97,30 @@
         <div class="settings_box" id="settings-box">
             <span onclick="closeSettings();" class="cb"><span class="material-symbols-outlined">close</span></span>
             <h1>Settings</h1>
-            <p class="warninglabel">Settings are not available yet. There are no parameters to set.</del></p>
-            <p><del>API Key:</p>
+            <p class="tiplabel">Remember to save the changes you make in settings by clicking the <i>Save</i> button at the bottom.</p>
+            <!--<p class="warninglabel">Settings are not available yet. There are no parameters to set.</p>-->
+            <p><b>Auto location</b></p>
+            <p class="settings-help-text">If this is turned on, app shows weather in your location every time. If it is turned off, you have to manually update it, clicking the GPS icon in search menu. (default on)</p>
+            <input type="checkbox" name="autoloccheck" id="autoloccheck">
+            <label for="autoloccheck">Automatically check my location</label>
+
+            <!--<p><b><del>API Key:</b></p>
             <p class="settings-help-text"><del>Insert your own OpenWeather API Key to see the forecast.</del></p>
+            -->
+            <br><br><br>
+            <span class="button" onclick="saveSettings()">Save</span>
         </div>
     </div>
     <div class="search" id="search-visibility">
         <div class="search_box" id="search-box">
             <span onclick="closeSearch();" class="cb"><span class="material-symbols-outlined">close</span></span>
             <h1>Search</h1>
-            <p class="firsttimelabel" id="firsttimelabel">Seems like you haven't used this website yet. Search for a city to get started.</p>
+            <p class="firsttimelabel" id="firsttimelabel">Seems like you haven't used this website yet. Search for a city or use <b>GPS location</b> to get started.</p>
+            <p class="critlabel" id="gpserrorlabel">The GPS location of you device is not avaiable. Check that you have geolocation enabled and that you press "allow" in the prompt.</p>
             <p class="settings-help-text">Enter your city name and click the search icon.</p>
-            <input type="text" id="searchField"><span onclick="searchCity();" class="material-symbols-outlined">search</span>
+            <input type="text" id="searchField">
+            <span onclick="searchCity();" class="material-symbols-outlined">search</span>
+            <span onclick="searchCityByCurrentLocation();" class="material-symbols-outlined">location_searching</span>
         </div>
     </div>
 

@@ -14,34 +14,68 @@ getApiKey().then(apiKey => {
 //Now check the weather once initially, after selecting city..
 //button.addEventListener('click', function(){
 
-if(!localStorage.getItem("lastSearch")){
+if(!localStorage.getItem("lastSearchType")){
   openSearch();
+  localStorage.setItem("autoloc", "true");
 }
 else{
-  inputValue = localStorage.getItem("lastSearch");
-  checkwthr();
-  setTimeout(() => {
-    getForecastPrintSmallTable();
-  }, 500);  
+  if(localStorage.getItem("lastSearchType") == "cityname"){
+    inputValue = localStorage.getItem("lastSearch");
+    checkwthr(0, 0);
+    setTimeout(() => {
+      getForecastPrintSmallTable();
+    }, 500);  
+  }
+  else if(localStorage.getItem("lastSearchType") == "location" && localStorage.getItem("autoloc") == "true"){
+    searchCityByCurrentLocation();
+  }
+  else{
+    checkwthr(localStorage.getItem("lastCoordsLat"), localStorage.getItem("lastCoordsLon"));
+      setTimeout(() => {
+        getForecastPrintSmallTable();
+      }, 500);
+  }
 }
-
-
-
-
 
 function searchCity(){
   var field = document.getElementById('searchField').value;
   inputValue = field;
-  checkwthr();
+  checkwthr(0, 0);
   setTimeout(() => {
     getForecastPrintSmallTable();
   }, 500);
   localStorage.setItem("lastSearch", field);
+  localStorage.setItem("lastSearchType", "cityname");
   closeSearch();
 }
 
+function searchCityByCurrentLocation(){
+  if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      checkwthr(position.coords.latitude, position.coords.longitude);
+      setTimeout(() => {
+        getForecastPrintSmallTable();
+      }, 500);
+      localStorage.setItem("lastCoordsLat", position.coords.latitude);
+      localStorage.setItem("lastCoordsLon", position.coords.longitude);
+      localStorage.setItem("lastSearchType", "location");
+      closeSearch();
+    });
+  } else {
+    /* geolocation IS NOT available */
+    document.getElementById("gpserrorlabel").style.display = "block";
+  }
+}
 
-
+function saveSettings(){
+  if(document.getElementById("autoloccheck").checked){
+    localStorage.setItem("autoloc", "true");
+  }
+  else{
+    localStorage.setItem("autoloc", "false");
+  }
+  closeSettings();
+}
 
 
 //Then check it every 30 cumulative seconds the user is looking at the page

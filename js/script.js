@@ -37,10 +37,24 @@ var apiKey = "";
 lang = lang.substring(0, 2);
 //console.log("lang: " + lang);
 
-function checkwthr(){
+function checkwthr(latitudeInput, longitudeInput){
+  //check if we got latitude or longitude input other than zero
+  var link = "";
+  
   //CURRENT WEATHER
   //oh my god this shit works
-  getApiKey().then(apiKey => fetch('http://api.openweathermap.org/data/2.5/weather?q=' + /*inputValue.value*/ inputValue + '&units=metric&lang=' + lang + '&appid=' + apiKey))
+  getApiKey()
+  .then(function(){
+    if(latitudeInput != 0 && longitudeInput != 0){
+      //check by coords
+      link = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitudeInput + '&lon=' + longitudeInput + '&units=metric&lang=' + lang + '&appid=' + apiKey;
+    }
+    else{
+      //check by query
+      link = 'http://api.openweathermap.org/data/2.5/weather?q=' + /*inputValue.value*/ inputValue + '&units=metric&lang=' + lang + '&appid=' + apiKey;
+    }
+  })
+    .then(apiKey => fetch(link))
     .then(response => response.json())
     .then(data => {
       var nameVal = "&#127757;&nbsp;" + data['name'];

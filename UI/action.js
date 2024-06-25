@@ -23,6 +23,7 @@ function switchModes(){
 }
 
 function openSettings(){
+    document.getElementById("autoloccheck").checked = localStorage.getItem("autoloc");
     document.getElementById("settings-visibility").style.display = "block";
     //document.getElementById("settings-visibility").style.animation = ".5s ease-in 1 normal both running blurin;";
 }
