@@ -51,7 +51,7 @@ function searchCity(){
 
 function searchCityByCurrentLocation(){
   if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition((position) => {
+    navigator.geolocation.getCurrentPosition((position, locationError, locOptions) => {
       checkwthr(position.coords.latitude, position.coords.longitude);
       setTimeout(() => {
         getForecastPrintSmallTable();
@@ -59,12 +59,23 @@ function searchCityByCurrentLocation(){
       localStorage.setItem("lastCoordsLat", position.coords.latitude);
       localStorage.setItem("lastCoordsLon", position.coords.longitude);
       localStorage.setItem("lastSearchType", "location");
+      localStorage.setItem("lastSearch", "?");
       closeSearch();
     });
   } else {
     /* geolocation IS NOT available */
     document.getElementById("gpserrorlabel").style.display = "block";
   }
+}
+
+const locOptions = {
+  enableHighAccuracy: true,
+  maximumAge: 0,
+  timeout: 20000,
+};
+
+function locationError(err){
+  document.getElementById("gpserrorlabel").style.display = "block";
 }
 
 function saveSettings(){

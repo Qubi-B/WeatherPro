@@ -46,5 +46,5 @@ function openSearch(){
 
 function closeSearch(){
     document.getElementById("search-visibility").style.display = "none";
-    
+    document.getElementById("gpserrorlabel").style.display = "none";
 }
