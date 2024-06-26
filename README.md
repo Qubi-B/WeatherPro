@@ -8,7 +8,8 @@ The app is set to be a PWA (Progressive Web App), which will make it possible to
 Better my web development skills, making responsive apps, using APIs, creating PWAs.
 
 ## How to access?
-**You can use the app in github pages after the v0.0.2-stable release**
+https://weather-pro-v2fr6.ondigitalocean.app/
+**Alternatively, you can use the app in github pages after the v0.0.2-stable release**
 
 ### How to input API key?
 > [!TIP]
