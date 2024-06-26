@@ -97,32 +97,42 @@
         <div class="settings_box" id="settings-box">
             <span onclick="closeSettings();" class="cb"><span class="material-symbols-outlined">close</span></span>
             <h1>Settings</h1>
+            <hr>
             <p class="tiplabel">Remember to save the changes you make in settings by clicking the <i>Save</i> button at the bottom.</p>
             <!--<p class="warninglabel">Settings are not available yet. There are no parameters to set.</p>-->
+            <hr>
             <p><b>Auto location</b></p>
             <p class="settings-help-text">If this is turned on, app shows weather in your location every time. If it is turned off, you have to manually update it, clicking the GPS icon in search menu. (default on)</p>
             <input type="checkbox" name="autoloccheck" id="autoloccheck">
             <label for="autoloccheck">Automatically check my location</label>
-
+            <hr>
+            <p><b>Auto dark mode</b></p>
+            <p class="settings-help-text">Automatically set the color mode of this website according to your device's settings.</p>
+            <input type="checkbox" name="automodecheck" id="automodecheck">
+            <label for="automodecheck">Automatically enable dark/light mode</label>
+            <hr>
             <p><b>API Key:</b></p>
             <p class="settings-help-text">Insert your own OpenWeather API Key to see the forecast. Leave blank to use the default API Key (it may not work if the daily quota has been used up by other users)</p>
             <input type="text" name="customapikey" id="customapikey">
-
-            <br><br><br>
-            <span class="button" onclick="saveSettings()">Save</span>
+            <hr>
+            <br>
+            <span class="button" onclick="saveSettings()">&nbsp;&nbsp;Save&nbsp;&nbsp;</span>
         </div>
     </div>
     <div class="search" id="search-visibility">
         <div class="search_box" id="search-box">
             <span onclick="closeSearch();" class="cb"><span class="material-symbols-outlined">close</span></span>
             <h1>Search</h1>
-            <p class="warninglabel">You are using the free public API key to download the forecast. Keep in mind that the quota on this key can get used up by other users, and you won't be able to use this app for a time delay. Set up your own key from <a href="openweathermap.org" style="color: white;">Openweather</a> in <u onclick="closeSearch();openSettings();" style="cursor:pointer;">Settings</u></p>
+            <hr>
+            <p class="warninglabel" id="api-warning">You are using the public API key to download the forecast. The quota on this key can get used up by other users. Get your own key from <a href="openweathermap.org" style="color: white;">Openweather</a> and set it in <u onclick="closeSearch();openSettings();" style="cursor:pointer;">Settings</u></p>
             <p class="firsttimelabel" id="firsttimelabel">Seems like you haven't used this website yet. Search for a city or use <b>GPS location</b> to get started.</p>
             <p class="critlabel" id="gpserrorlabel">The GPS location of your device is not avaiable. Check that you have geolocation enabled and that you press "allow" in the prompt.</p>
+            <hr>
             <p class="settings-help-text">Enter your city name and click the search icon.</p>
             <input type="text" id="searchField">
             <span onclick="searchCity();" class="material-symbols-outlined">search</span>
             <span onclick="searchCityByCurrentLocation();" class="material-symbols-outlined">location_searching</span>
+            <hr>
         </div>
     </div>
 
