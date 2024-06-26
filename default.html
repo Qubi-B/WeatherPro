@@ -104,9 +104,10 @@
             <input type="checkbox" name="autoloccheck" id="autoloccheck">
             <label for="autoloccheck">Automatically check my location</label>
 
-            <!--<p><b><del>API Key:</b></p>
-            <p class="settings-help-text"><del>Insert your own OpenWeather API Key to see the forecast.</del></p>
-            -->
+            <p><b>API Key:</b></p>
+            <p class="settings-help-text">Insert your own OpenWeather API Key to see the forecast. Leave blank to use the default API Key (it may not work if the daily quota has been used up by other users)</p>
+            <input type="text" name="customapikey" id="customapikey">
+
             <br><br><br>
             <span class="button" onclick="saveSettings()">Save</span>
         </div>
@@ -115,8 +116,9 @@
         <div class="search_box" id="search-box">
             <span onclick="closeSearch();" class="cb"><span class="material-symbols-outlined">close</span></span>
             <h1>Search</h1>
+            <p class="warninglabel">You are using the free public API key to download the forecast. Keep in mind that the quota on this key can get used up by other users, and you won't be able to use this app for a time delay. Set up your own key from <a href="openweathermap.org" style="color: white;">Openweather</a> in <u onclick="closeSearch();openSettings();" style="cursor:pointer;">Settings</u></p>
             <p class="firsttimelabel" id="firsttimelabel">Seems like you haven't used this website yet. Search for a city or use <b>GPS location</b> to get started.</p>
-            <p class="critlabel" id="gpserrorlabel">The GPS location of you device is not avaiable. Check that you have geolocation enabled and that you press "allow" in the prompt.</p>
+            <p class="critlabel" id="gpserrorlabel">The GPS location of your device is not avaiable. Check that you have geolocation enabled and that you press "allow" in the prompt.</p>
             <p class="settings-help-text">Enter your city name and click the search icon.</p>
             <input type="text" id="searchField">
             <span onclick="searchCity();" class="material-symbols-outlined">search</span>

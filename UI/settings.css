@@ -62,3 +62,13 @@
         width: 85%;
     }
 }
+
+.settings input[type=text] {
+    background-color: transparent;
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 12px;
+    padding: 1vh;
+    color: inherit;
+    vertical-align: middle;
+    font-size: 16px;
+}

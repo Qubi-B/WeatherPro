@@ -1,7 +1,8 @@
 //First get the API key from file
 //this is code from the internet and I have no idea what is going on until...
+/*
 function getApiKey() {
-  return fetch("http://localhost/weather-pro/js/openWeatherApiKey.json")
+  return fetch("http://127.0.0.1:5500/weather-pro/js/openWeatherApiKey.json")
    .then(response => response.json())
    .then(data => data.key);
 }
@@ -11,12 +12,21 @@ getApiKey().then(apiKey => {
 }); 
 //...there
 
+*/
+
+//get api key (new)
+function getApiKey(){
+  return(localStorage.getItem("apiKey"));
+}
+
 //Now check the weather once initially, after selecting city..
 //button.addEventListener('click', function(){
 
 if(!localStorage.getItem("lastSearchType")){
   openSearch();
   localStorage.setItem("autoloc", "true");
+  localStorage.setItem("apiKey", "86fd47dba861b4b040377dce3a28a1de");
+  localStorage.setItem("isCustomKeyPresent", "false");
 }
 else{
   if(localStorage.getItem("lastSearchType") == "cityname"){
@@ -78,12 +88,25 @@ function locationError(err){
   document.getElementById("gpserrorlabel").style.display = "block";
 }
 
+
+
 function saveSettings(){
   if(document.getElementById("autoloccheck").checked){
     localStorage.setItem("autoloc", "true");
   }
   else{
     localStorage.setItem("autoloc", "false");
+  }
+
+  if(document.getElementById("customapikey").value != ""){
+    userKey = document.getElementById("customapikey").value;
+    localStorage.setItem("apiKey", userKey);
+    localStorage.setItem("isCustomKeyPresent", "true");
+  }
+  else{
+    userKey = "86fd47dba861b4b040377dce3a28a1de";
+    localStorage.setItem("apiKey", userKey);
+    localStorage.setItem("isCustomKeyPresent", "false");
   }
   closeSettings();
 }
