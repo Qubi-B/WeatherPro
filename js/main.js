@@ -27,6 +27,7 @@ if(!localStorage.getItem("lastSearchType")){
   localStorage.setItem("autoloc", "true");
   localStorage.setItem("apiKey", "86fd47dba861b4b040377dce3a28a1de");
   localStorage.setItem("isCustomKeyPresent", "false");
+  localStorage.setItem("userSetMode", "auto");
 }
 else{
   if(localStorage.getItem("lastSearchType") == "cityname"){
@@ -107,6 +108,13 @@ function saveSettings(){
     userKey = "86fd47dba861b4b040377dce3a28a1de";
     localStorage.setItem("apiKey", userKey);
     localStorage.setItem("isCustomKeyPresent", "false");
+  }
+
+  if(document.getElementById("automodecheck").checked){
+    localStorage.setItem("setDarkMode", "auto");
+  }
+  else{
+    localStorage.setItem("setDarkMode", "");
   }
   closeSettings();
 }
