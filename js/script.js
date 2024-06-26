@@ -48,11 +48,11 @@ function checkwthr(latitudeInput, longitudeInput){
 
     if(latitudeInput != 0 && longitudeInput != 0){
       //check by coords
-      link = 'http://api.openweathermap.org/data/2.5/weather?lat=' + latitudeInput + '&lon=' + longitudeInput + '&units=metric&lang=' + lang + '&appid=' + apiKey;
+      link = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitudeInput + '&lon=' + longitudeInput + '&units=metric&lang=' + lang + '&appid=' + apiKey;
     }
     else{
       //check by query
-      link = 'http://api.openweathermap.org/data/2.5/weather?q=' + /*inputValue.value*/ inputValue + '&units=metric&lang=' + lang + '&appid=' + apiKey;
+      link = 'https://api.openweathermap.org/data/2.5/weather?q=' + /*inputValue.value*/ inputValue + '&units=metric&lang=' + lang + '&appid=' + apiKey;
     }
     fetch(link)
     .then(response => response.json())
@@ -104,7 +104,7 @@ function checkwthr(latitudeInput, longitudeInput){
 
     //CURRENT AIR QUALITY
     //OH MY GOD THIS IS WORKING
-    fetch('http://api.openweathermap.org/data/2.5/air_pollution?lat=' + lati + '&lon=' + long + '&units=metric&appid=' + apiKey)
+    fetch('https://api.openweathermap.org/data/2.5/air_pollution?lat=' + lati + '&lon=' + long + '&units=metric&appid=' + apiKey)
       .then(response => response.json())
       .then(data => {
         var aqiVal = data['list'][0]['main']['aqi'];
@@ -134,7 +134,7 @@ function getForecastPrintSmallTable(){
   forecTableStagedContent = "";
   forecTable.innerHTML = '<img src="newIcons/load.png" alt="" class="loading_icon" /><br>';
 
-  fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + lati + '&lon=' + long + '&units=metric&appid=' + apiKey)
+  fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lati + '&lon=' + long + '&units=metric&appid=' + apiKey)
       .then(response => response.json())
       .then(data => {
         //generate the table
@@ -163,7 +163,7 @@ function getForecastPrintFullTable(){
   forecTableStagedContent = "";
   forecTable.innerHTML = '<img src="newIcons/load.png" alt="" class="loading_icon" /><br>';
   
-  fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + lati + '&lon=' + long + '&units=metric&appid=' + apiKey)
+  fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lati + '&lon=' + long + '&units=metric&appid=' + apiKey)
       .then(response => response.json())
       .then(data => {
         //generate the table
